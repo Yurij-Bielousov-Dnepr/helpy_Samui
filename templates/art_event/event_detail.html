@@ -1,0 +1,10 @@
+{% extends 'base_templates/base.html' %}
+{% load i18n %}
+{% block content %}
+  <h2>{% trans "Event Details" %}</h2>
+  <p><strong>{% trans "Title" %}:</strong> {{ event.title }}</p>
+  <p><strong>{% trans "Description" %}:</strong> {{ event.description }}</p>
+  <p><strong>{% trans "Date" %}:</strong> {{ event.date }}</p>
+  <p><strong>{% trans "Time" %}:</strong> {{ event.time }}</p>
+  <p><strong>{% trans "Location" %}:</strong> {{ event.location }}</p>
+{% endblock %}

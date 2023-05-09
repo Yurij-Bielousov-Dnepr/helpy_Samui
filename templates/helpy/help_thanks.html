@@ -1,0 +1,9 @@
+{% extends "base_templates/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h1>{% trans "Thank you for your request!" %}</h1>
+    <p>{% trans "We have received your request and have forwarded it to a helper. We hope they will contact you as soon as possible. We invite you to visit our" %} <a href="{% url 'art_event:articles' %}">{% trans "articles" %}</a> {% trans "and" %} <a href="{% url 'art_event:events' %}">{% trans "events" %}</a> {% trans "sections to expand your knowledge. Once you receive help, please leave a review to help us improve our service." %}</p>
+</div>
+{% endblock %}

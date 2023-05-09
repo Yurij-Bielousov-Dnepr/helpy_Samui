@@ -1,0 +1,14 @@
+{% extends "base_templates/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h1>{% trans "Choose a helper" %}</h1>
+    <p>{% trans "Please fill out the form to request help." %}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Submit' %}">
+    </form>
+</div>
+{% endblock %}

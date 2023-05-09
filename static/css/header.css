@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  color-interpolation: auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077be;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.language-selector {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  padding: 10px 0;
+  background-color: orangered;
+}
+
+.language-selector li {
+  margin-right: 10px;
+  border: 1px solid #fff;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  padding: 10px 0;
+  background-color: orangered;
+}
+
+.menu li {
+  margin-right: 10px;
+  border: 1px solid #fff;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}

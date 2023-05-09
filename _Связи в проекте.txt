@@ -1,0 +1,6 @@
+Ф-HelpForm В-search_helpers Ш-helpy/help/help.html	У-	 страница для поиска помощника
+Ф- 		В-HelpMyView Ш-helpy/help/helpmy.html	У-helpmy	 страница для демонстрации результатов поиска помощника
+Ф- 			В- Ш-helper_list.html У-helper_list	страница для демонстрации странички - могу помочь-подменю
+Ф-HelperCreateForm В-helper_form Ш-helper_form.html У-add_helper	страница для добавления помощника
+Ф-HelperUpdateForm В-HelperUpdateView Ш-update_helper.html У-update_helper_info	страница для обновления помощника
+Ф-DeleteProfileForm В-HelperDeleteView Ш- У-delete_helper	страница для удаления помощника

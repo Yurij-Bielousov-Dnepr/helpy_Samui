@@ -1,0 +1,105 @@
+body {
+  background-color: #f4d03f;
+  background-image: linear-gradient(0deg, #f4d03f 0%, #16a085 100%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #16a085;
+}
+
+.language-selector {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.language-selector li {
+  margin-right: 10px;
+}
+
+.language-selector li:last-child {
+  margin-right: 0;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 10px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+main {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+main h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 0;
+}
+
+main p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.language-selector {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f6d55c; /* желтый цвет */
+  border-radius: 10px; /* закругленные углы */
+  padding: 10px; /* добавляем отступы */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2); /* добавляем тень */
+}
+
+.language-selector li {
+  margin-right: 10px;
+}
+
+.language-selector li:last-child {
+  margin-right: 0;
+}
+
+.language-selector a {
+  color: #333; /* цвет ссылок */
+  text-decoration: none; /* убираем подчеркивание */
+  font-weight: bold; /* делаем шрифт жирным */
+}
+
+.language-selector a:hover {
+  color: #fff; /* меняем цвет при наведении */
+}
+
+
+
+
+
+

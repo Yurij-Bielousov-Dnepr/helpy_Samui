@@ -1,0 +1,21 @@
+{% extends "base_templates/base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="container">
+    <h1>{% trans "User Reviews" %}</h1>
+    <p>{% trans "User reviews are important for evaluating the quality and usability of the website. Sorting and adding reviews are important components of the user experience. They allow users to quickly find the information they need and share their opinion. It is important to ensure the security of reviews by checking for spam and moderation." %}</p>
+    <p><a href="{% url 'reviews:reviews_add' %}">{% trans "Add a review" %}</a></p>
+    <p><a href="{% url 'reviews:reviews_list' %}">{% trans "See all reviews" %}</a></p>
+    {% if user.is_staff %}
+      <p><a href="{% url 'reviews:moderation_view' %}">{% trans "Moderation" %}</a></p>
+    {% endif %}
+    {% if user.is_authenticated %}
+      {% for review in reviews %}
+        {% if review.customer_name == user.username %}
+          <p><a href="{% url 'reviews:reviews_edit' review.pk %}">{% trans "Edit review" %}</a></p>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}
