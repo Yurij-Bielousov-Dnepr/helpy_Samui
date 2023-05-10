@@ -32,12 +32,12 @@ STATIC_URL = "static/"
 #     os.path.join( BASE_DIR, "../accounts", "static", "accounts" ),
 # ]
 STATICFILES_DIRS = [
-    os.path.join( BASE_DIR, "static" ),
-    os.path.join( BASE_DIR, "helpy", "static", "helpy" ),
-    os.path.join( BASE_DIR, "art_event", "static", "art_event" ),
-    os.path.join( BASE_DIR, "reviews", "static", "reviews" ),
-    os.path.join( BASE_DIR, "offer", "static", "offer" ),
-    os.path.join( BASE_DIR, "accounts", "static", "accounts" ),
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "helpy", "static", "helpy"),
+    os.path.join(BASE_DIR, "art_event", "static", "art_event"),
+    os.path.join(BASE_DIR, "reviews", "static", "reviews"),
+    os.path.join(BASE_DIR, "offer", "static", "offer"),
+    os.path.join(BASE_DIR, "accounts", "static", "accounts"),
 ]
 WSGI_APPLICATION = "helpySamui.wsgi.application"
 
@@ -92,10 +92,11 @@ LANGUAGES = [
 ]
 
 ROOT_URLCONF = "helpySamui.urls"
-MEDIA_URL = "media/"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SITE_URL = "http://127.0.0.1:8000/"
 SITE_ID = 1
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOCALE_PATHS = [
     os.path.join( BASE_DIR, "locale" ),
@@ -166,6 +167,12 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'accounts.middleware.CustomCsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'accounts.middleware.CustomPermissionDeniedMiddleware',
     # ...
 ]
 # Добавляем поддержку временных зон.
