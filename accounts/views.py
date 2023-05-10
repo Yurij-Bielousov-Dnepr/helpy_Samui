@@ -21,8 +21,7 @@ from .forms import CustomAuthenticationForm  # Импортируйте вашу
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth import login
-
-
+from .middleware import CustomPermissionDeniedMiddleware, CustomCsrfViewMiddleware
 
 
 class EmailConfirmView(TemplateView):

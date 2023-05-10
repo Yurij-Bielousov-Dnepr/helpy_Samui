@@ -9,6 +9,7 @@ from django.contrib.auth.views import (
 from django.views.generic import TemplateView
 # from telegram_bot.telegram_bot import set_webhook, webhook
 from django.utils.translation import gettext_lazy as _
+from .views import csrf_failure
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.admin.views.decorators import staff_member_required
@@ -47,6 +48,7 @@ urlpatterns = [
           name='password_reset_from_key_done' ),
     path( 'password_change/', views.PasswordChangeView.as_view(), name='password_change' ),
     path( 'vip/', VIPView.as_view(), name='vip' ),
+
 ]
 
 # urlpatterns = [
