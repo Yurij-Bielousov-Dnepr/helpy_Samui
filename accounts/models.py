@@ -54,13 +54,13 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def __str__(self):
-        return self.email
+        return f" { self.email}"
 
     def get_full_name(self):
-        return self.userNick
+        return f"{self.category} с именем {self.userNick} из {self.district}"
 
     def get_short_name(self):
-        return self.userNick
+        return f" { self.userNick}"
 
     @property
     def is_authenticated(self):
@@ -72,19 +72,20 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     def has_module_perms(self, app_label):
         return self.is_superuser
 
-class Sponsor(models.Model):
+
+class Sponsor(MyUser):
     name = models.CharField(max_length=255)
     url = models.URLField()
 
     def __str__(self):
-        return self.name
+        return f" Sponsor {self.name}"
 
 
 class Region(models.Model):
     name = models.CharField(max_length=55, choices=REGION_CHOICES)
 
     def __str__(self):
-        return self.name
+        return f"Region: {self.name}"
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -92,11 +93,12 @@ class Region(models.Model):
                 Region.objects.get_or_create(name=choice[1])
         super().save(*args, **kwargs)
 
+
 class Language(models.Model):
     language = models.CharField(max_length=10, choices=LANGUAGE_CHOICES)
 
     def __str__(self):
-        return self.language
+        return f" {self.language}"
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -104,11 +106,12 @@ class Language(models.Model):
                 Language.objects.get_or_create(language=choice[1])
         super().save(*args, **kwargs)
 
+
 class SupportLevel(models.Model):
-    level = models.IntegerField(choices=LEVEL_CHOICES)
+    Supportlevel = models.IntegerField(choices=LEVEL_CHOICES)
 
     def __str__(self):
-        return f"Level {self.level}"
+        return f"SupportLevel {self.Supportlevel}"
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -116,11 +119,12 @@ class SupportLevel(models.Model):
                 SupportLevel.objects.get_or_create(level=choice[0])
         super().save(*args, **kwargs)
 
+
 class Level(models.Model):
-    level = models.IntegerField(choices=LEVEL_CHOICES)
+    Level = models.IntegerField(choices=LEVEL_CHOICES)
 
     def __str__(self):
-        return f"Level {self.level}"
+        return f"Level {self.Level}"
 
     def save(self, *args, **kwargs):
         if not self.pk:

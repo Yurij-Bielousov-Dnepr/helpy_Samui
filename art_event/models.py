@@ -14,20 +14,9 @@ class Tag_article(models.Model):
     def __str__(self):
         return self.get_name_display()
 
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            for choice in TAG_ARTICLE_CHOICES:
-                Tag_article.objects.get_or_create(name=choice[1])
-        super().save(*args, **kwargs)
-
     class Meta:
         app_label = 'art_event'
 
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            for tag in TAG_HELP_NAME_CHOICES:
-                TagArticle.objects.get_or_create(name=tag[0])
-        super().save(*args, **kwargs)
 
 class Event(models.Model):
     title = models.CharField(max_length=55)
@@ -37,14 +26,14 @@ class Event(models.Model):
     rating = models.IntegerField(default=0)
     is_approved = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag_article, verbose_name="Tags", null=False, blank=False)
+    tags = models.ManyToManyField(Tag_article, verbose_name="Tags", blank=False)
 
-    def clean(self):
-        super().clean()
-        for tag in self.tags.all():
-            if tag.name not in dict(TAG_ARTICLE_CHOICES).keys():
-                raise ValidationError(f"Tag '{tag.name}' is not a valid choice.")
-
+    # def clean(self):
+    #     super().clean()
+    #     for tag in self.tags.all():
+    #         if tag.name not in dict(TAG_ARTICLE_CHOICES).keys():
+    #             raise ValidationError(f"Tag '{tag.name}' is not a valid choice.")
+    #
 
 
 class Article(models.Model):
@@ -53,13 +42,13 @@ class Article(models.Model):
     rating = models.IntegerField(default=0)
     is_approved = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag_article, verbose_name="Tags", null=False, blank=False)
+    tags = models.ManyToManyField(Tag_article, verbose_name="Tags",  blank=False)
 
-    def clean(self):
-        super().clean()
-        for tag in self.tags.all():
-            if tag.name not in dict(TAG_ARTICLE_CHOICES).keys():
-                raise ValidationError(f"Tag '{tag.name}' is not a valid choice.")
+    # def clean(self):
+    #     super().clean()
+    #     for tag in self.tags.all():
+    #         if tag.name not in dict(TAG_ARTICLE_CHOICES).keys():
+    #             raise ValidationError(f"Tag '{tag.name}' is not a valid choice.")
 
 
 class Review(models.Model):
