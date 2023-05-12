@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 # from django.contrib.auth.models import User
 from accounts.models import MyUser
-from helpySamui.constants import REVIEW_RATING_CHOICES, TAG_ARTICLE_CHOICES
+from helpySamui.constants import REVIEW_RATING_CHOICES, TAG_ARTICLE_CHOICES, TAG_HELP_NAME_CHOICES
 
 
 class Tag_article(models.Model):
@@ -23,6 +23,11 @@ class Tag_article(models.Model):
     class Meta:
         app_label = 'art_event'
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            for tag in TAG_HELP_NAME_CHOICES:
+                TagArticle.objects.get_or_create(name=tag[0])
+        super().save(*args, **kwargs)
 
 class Event(models.Model):
     title = models.CharField(max_length=55)

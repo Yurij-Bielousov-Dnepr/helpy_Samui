@@ -265,5 +265,6 @@ class HelpRequestForm(forms.ModelForm):
     )
     languages = forms.ModelMultipleChoiceField(
         queryset=Language.objects.all(),
-        widget=forms.CheckboxSelectMultiple(),
+        widget=forms.SelectMultiple(attrs={"class": "form-select"}),
+        initial=[Language.objects.first()],
     )
