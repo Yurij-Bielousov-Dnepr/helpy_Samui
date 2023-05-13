@@ -7,7 +7,7 @@ class SupportLevel:
 
 
 class Region:
-    pass
+    objects = None
 
 
 def language():
@@ -15,9 +15,9 @@ def language():
 
 
 class Level:
-    pass
+    objects = None
 
 
 class Language:
-    pass
+    objects = None
 

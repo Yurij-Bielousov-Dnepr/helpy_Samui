@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/GB6Eki?referralCode=U5zXSw)
 # PROJECT-DIPLOM
-
+Проект защищен 12-05-23 
 DIPLOM PROJECT
 
 of Python 23 IT Step University
