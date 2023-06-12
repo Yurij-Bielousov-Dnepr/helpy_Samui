@@ -108,15 +108,15 @@ class Language(models.Model):
 
 
 class SupportLevel(models.Model):
-    Supportlevel = models.IntegerField(choices=LEVEL_CHOICES)
+    support_level = models.IntegerField(choices=LEVEL_CHOICES)
 
     def __str__(self):
-        return f"SupportLevel {self.Supportlevel}"
+        return f"SupportLevel {self.support_level}"
 
     def save(self, *args, **kwargs):
         if not self.pk:
             for choice in LEVEL_CHOICES:
-                SupportLevel.objects.get_or_create(level=choice[0])
+                SupportLevel.objects.get_or_create(support_level=choice[0])
         super().save(*args, **kwargs)
 
 
