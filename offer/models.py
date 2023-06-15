@@ -17,4 +17,5 @@ class Helper(accounts.MyUser):
     regions = models.ManyToManyField(Region)
     contacts = models.TextField()
     user_offer_is_free = models.BooleanField(default=False)
+
     soft_skills = models.TextField(blank=True, null=True)
