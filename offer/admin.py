@@ -17,6 +17,7 @@ class HelperAdmin(admin.ModelAdmin):
         return ', '.join(str(language) for language in obj.languages.all())
 
     display_support_levels.short_description = 'Support Levels'
+
     display_regions.short_description = 'Regions'
 
     display_languages.short_description = 'Languages'
