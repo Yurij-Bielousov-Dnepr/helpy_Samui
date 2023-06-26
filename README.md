@@ -1,4 +1,3 @@
-## Django Template
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/GB6Eki?referralCode=U5zXSw)
 # PROJECT-DIPLOM
@@ -10,7 +9,6 @@ DIPLOM PROJECT
 of Python 23 IT Step University
 
 Yurij-Bielousov Сайт поиска помогаек
-
 
     Работа над ошибками:
 В первой версии:
